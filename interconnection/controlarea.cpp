@@ -188,7 +188,7 @@ TIMESTAMP controlarea::sync(TIMESTAMP t1)
 		if ( true ) // actual!=0 ) // && schedule!=0 )
 		{
 			ace = ace_filter[0][1]*ace + ace_filter[0][0]*((actual + export_losses - schedule) + ferror);
-			if ( !isfinite(ace) )
+			if ( !std::isfinite(ace) )
 			{
 				gl_warning("ACE for node %s is not a finite number, using 0.0 instead", get_name());
 			/* TROUBLESHOOT

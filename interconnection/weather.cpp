@@ -53,7 +53,7 @@ int weather::init(OBJECT *parent)
 {
 	if ( get_options(AC_SOLARCALCS) )
 	{
-		if ( !isfinite(my()->latitude) || !isfinite(my()->longitude) )
+		if ( !std::isfinite(my()->latitude) || !std::isfinite(my()->longitude) )
 			exception("cannot use SOLARCALCS option without specifying latitude and longitude");
 		if ( my()->latitude<0 )
 			exception("southern latitudes not supported yet");
